@@ -60,6 +60,12 @@ describe("selectProduct", function() {
 	it("checks to make sure amount of inserted coins covers cost", function() {
 		var product = vendingMachine.selectProduct(0);
 		expect(product).to.equal("PRICE $1.00");
+
+		product = vendingMachine.selectProduct(1);
+		expect(product).to.equal("PRICE $0.50");
+
+		product = vendingMachine.selectProduct(2);
+		expect(product).to.equal("PRICE $0.65");
 	});
 
 	it("lets customers buy cola", function() {

@@ -40,7 +40,16 @@ module.exports = {
 		var product = this.products[productNum];
 
 		if (this.insertedCoinAmount < product.price) {
-			return "PRICE $1.00";
+			var stringPrice = String(product.price);
+
+			if (stringPrice.length === 1) {
+				stringPrice = "00" + stringPrice;
+			} else if (stringPrice.length === 2) {
+				stringPrice = "0" + stringPrice;
+			}
+
+			stringPrice = "$" + stringPrice.substr(0, stringPrice.length - 2) + "." + stringPrice.slice(stringPrice.length - 2, stringPrice.length);
+			return "PRICE " + stringPrice;
 		} else {
 			return this.products[productNum].product;
 		}
