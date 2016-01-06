@@ -23,5 +23,9 @@ module.exports = {
 			// need to add function for coin return
 			return 0;
 		}
+	},
+
+	selectProduct: function(productNum) {
+		return "cola";
 	}
 }

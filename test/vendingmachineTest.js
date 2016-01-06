@@ -56,3 +56,10 @@ describe("addCoin", function() {
 	});
 });
 
+describe("selectProduct", function() {
+	it("lets customer buy cola", function() {
+		var product = vendingMachine.selectProduct(0);
+		expect(product).to.equal("cola");
+	});
+});
+
