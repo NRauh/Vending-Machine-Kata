@@ -16,7 +16,7 @@ describe("insertedAmount", function() {
 
 describe("addCoin", function() {
 	it("can add quarters", function() {
-		var quarter = vendingMachine.addCoin(24.26, 5.670);
+		var quarter = vendingMachine.addCoin(24.26, 5.67);
 		expect(quarter).to.equal(0.25);
 	});
 
@@ -28,6 +28,13 @@ describe("addCoin", function() {
 	it("can add nickels", function() {
 		var nickel = vendingMachine.addCoin(21.21, 5.0);
 		expect(nickel).to.equal(0.5);
+	});
+
+	it("rejects other coins", function() {
+		var penny = vendingMachine.addCoin(19.05, 2.5);
+		expect(penny).to.equal(0.0);
+		var weirdCoin = vendingMachine.addCoin(15.67, 4.2);
+		expect(weirdCoin).to.equal(0.0);
 	});
 });
 
