@@ -57,17 +57,25 @@ describe("addCoin", function() {
 });
 
 describe("selectProduct", function() {
+	it("checks to make sure amount of inserted coins covers cost", function() {
+		var product = vendingMachine.selectProduct(0);
+		expect(product).to.equal("PRICE $1.00");
+	});
+
 	it("lets customers buy cola", function() {
+		vendingMachine.insertedCoinAmount =  100;
 		var product = vendingMachine.selectProduct(0);
 		expect(product).to.equal("cola");
 	});
 
 	it("lets customers buy chips", function() {
+		vendingMachine.insertedCoinAmount = 50;
 		var product = vendingMachine.selectProduct(1);
 		expect(product).to.equal("chips");
 	});
 
 	it("lets customers buy candy", function() {
+		vendingMachine.insertedCoinAmount = 65;
 		var product = vendingMachine.selectProduct(2);
 		expect(product).to.equal("candy");
 	});

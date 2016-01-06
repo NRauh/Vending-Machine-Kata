@@ -37,6 +37,12 @@ module.exports = {
 	},
 
 	selectProduct: function(productNum) {
-		return this.products[productNum].product;
+		var product = this.products[productNum];
+
+		if (this.insertedCoinAmount < product.price) {
+			return "PRICE $1.00";
+		} else {
+			return this.products[productNum].product;
+		}
 	}
 }
