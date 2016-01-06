@@ -57,9 +57,19 @@ describe("addCoin", function() {
 });
 
 describe("selectProduct", function() {
-	it("lets customer buy cola", function() {
+	it("lets customers buy cola", function() {
 		var product = vendingMachine.selectProduct(0);
 		expect(product).to.equal("cola");
+	});
+
+	it("lets customers buy chips", function() {
+		var product = vendingMachine.selectProduct(1);
+		expect(product).to.equal("chips");
+	});
+
+	it("lets customers buy candy", function() {
+		var product = vendingMachine.selectProduct(2);
+		expect(product).to.equal("candy");
 	});
 });
 

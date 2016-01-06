@@ -1,4 +1,15 @@
 module.exports = {
+	products: [{
+		product: "cola",
+		price: 100
+	}, {
+		product: "chips",
+		price: 50
+	}, {
+		product: "candy",
+		price: 65
+	}],
+
 	insertedCoinAmount: 0,
 	
 	insertedAmount: function() {
@@ -26,6 +37,6 @@ module.exports = {
 	},
 
 	selectProduct: function(productNum) {
-		return "cola";
+		return this.products[productNum].product;
 	}
 }
