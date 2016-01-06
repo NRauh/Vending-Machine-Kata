@@ -24,5 +24,10 @@ describe("addCoin", function() {
 		var dime = vendingMachine.addCoin(17.91, 2.268);
 		expect(dime).to.equal(0.10);
 	});
+
+	it("can add nickels", function() {
+		var nickel = vendingMachine.addCoin(21.21, 5.0);
+		expect(nickel).to.equal(0.5);
+	});
 });
 
