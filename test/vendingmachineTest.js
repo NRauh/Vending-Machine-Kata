@@ -1,6 +1,10 @@
 var expect = require("chai").expect;
 var vendingMachine = require("../vendingmachine");
 
+beforeEach(function() {
+	vendingMachine.insertedCoinAmount = 0;
+});
+
 describe("insertedAmount", function() {
 	it("tells the customer to insert a coin if the inserted amount is zero", function() {
 		var value = vendingMachine.insertedAmount();
@@ -35,6 +39,20 @@ describe("addCoin", function() {
 		expect(penny).to.equal(0.0);
 		var weirdCoin = vendingMachine.addCoin(15.67, 4.2);
 		expect(weirdCoin).to.equal(0.0);
+	});
+
+	it("adds the values together", function() {
+		vendingMachine.addCoin(24.26, 5.67);
+		expect(vendingMachine.insertedAmount()).to.equal(0.25);
+
+		vendingMachine.addCoin(17.91, 2.268);
+		expect(vendingMachine.insertedAmount()).to.equal(0.35);
+
+		vendingMachine.addCoin(21.21, 5.0);
+		expect(vendingMachine.insertedAmount()).to.equal(0.40);
+
+		vendingMachine.addCoin(19.05, 2.5);
+		expect(vendingMachine.insertedAmount()).to.equal(0.40);
 	});
 });
 
