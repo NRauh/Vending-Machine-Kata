@@ -19,5 +19,10 @@ describe("addCoin", function() {
 		var quarter = vendingMachine.addCoin(24.26, 5.670);
 		expect(quarter).to.equal(0.25);
 	});
+
+	it("can add dimes", function() {
+		var dime = vendingMachine.addCoin(17.91, 2.268);
+		expect(dime).to.equal(0.10);
+	});
 });
 

@@ -10,6 +10,10 @@ module.exports = {
 	},
 
 	addCoin: function(mmDiameter, gWeight) {
-		return 0.25;
+		if (mmDiameter === 24.26 && gWeight === 5.670) {
+			return 0.25;
+		} else {
+			return 0.10;
+		}
 	}
 }
