@@ -7,5 +7,9 @@ module.exports = {
 		} else {
 			return "INSERT COIN";
 		}
+	},
+
+	addCoin: function(mmDiameter, gWeight) {
+		return 0.25;
 	}
 }

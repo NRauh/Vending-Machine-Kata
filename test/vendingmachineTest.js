@@ -14,3 +14,10 @@ describe("insertedAmount", function() {
 	});
 });
 
+describe("addCoin", function() {
+	it("adds a coin based on diameter and weight, returns new value", function() {
+		var quarter = vendingMachine.addCoin(24.26, 5.670);
+		expect(quarter).to.equal(0.25);
+	});
+});
+
