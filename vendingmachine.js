@@ -1,5 +1,11 @@
 module.exports = {
+	insertedCoinAmount: 0,
+	
 	insertedAmount: function() {
-		return "INSERT COIN";
+		if (this.insertedCoinAmount > 0) {
+			return this.insertedCoinAmount;
+		} else {
+			return "INSERT COIN";
+		}
 	}
 }
