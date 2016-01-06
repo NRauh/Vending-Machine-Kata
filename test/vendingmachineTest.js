@@ -85,5 +85,12 @@ describe("selectProduct", function() {
 		var product = vendingMachine.selectProduct(2);
 		expect(product).to.equal("candy");
 	});
+
+	it("subtracts the cost from coin amount as change, then resets coin amount", function() {
+		vendingMachine.insertedCoinAmount = 100;
+		var product = vendingMachine.selectProduct(1);
+		expect(vendingMachine.insertedCoinAmount).to.equal(0);
+		expect(vendingMachine.changeDue).to.equal(50);
+	});
 });
 

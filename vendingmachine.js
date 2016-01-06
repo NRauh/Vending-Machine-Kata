@@ -11,6 +11,8 @@ module.exports = {
 	}],
 
 	insertedCoinAmount: 0,
+
+	changeDue: 0,
 	
 	insertedAmount: function() {
 		if (this.insertedCoinAmount > 0) {
@@ -50,8 +52,11 @@ module.exports = {
 
 			stringPrice = "$" + stringPrice.substr(0, stringPrice.length - 2) + "." + stringPrice.slice(stringPrice.length - 2, stringPrice.length);
 			return "PRICE " + stringPrice;
-		} else {
-			return this.products[productNum].product;
 		}
+
+		this.changeDue = this.insertedCoinAmount - product.price;
+		this.insertedCoinAmount = 0;
+
+		return this.products[productNum].product;
 	}
 }
