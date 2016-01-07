@@ -153,7 +153,7 @@ describe("makeChange", function() {
 });
 
 describe("coinReturn", function() {
-	beforeEach(function() {
+	before(function() {
 		vendingMachine.coinsToReturn = [];
 	});
 
