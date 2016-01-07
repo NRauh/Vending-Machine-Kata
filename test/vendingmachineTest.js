@@ -112,8 +112,18 @@ describe("selectProduct", function() {
 });
 
 describe("makeChange", function() {
+	beforeEach(function() {
+		vendingMachine.coinsToReturn = [];
+	});
+
 	it("returns true when there's not change left to be made", function() {
 		var change = vendingMachine.makeChange();
 		expect(change).to.equal(true);
+	});
+
+	it("sets coinsToReturn to an array of coins that equal the change", function() {
+		vendingMachine.changeDue = 25;
+		vendingMachine.makeChange();
+		expect(vendingMachine.coinsToReturn).to.deep.equal([25]);
 	});
 });

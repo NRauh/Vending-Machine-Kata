@@ -16,6 +16,8 @@ module.exports = {
 	insertedCoinAmount: 0,
 
 	changeDue: 0,
+
+	coinsToReturn: [],
 	
 	insertedAmount: function() {
 		if (this.insertedCoinAmount > 0) {
@@ -69,6 +71,7 @@ module.exports = {
 	},
 
 	makeChange: function() {
+		this.coinsToReturn.push(25);
 		return true;
 	}
 }
