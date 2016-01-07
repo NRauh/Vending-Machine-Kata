@@ -103,6 +103,7 @@ module.exports = {
 		}
 
 		var coinSlot = this.coinsToReturn.toString();
+		coinSlot = coinSlot.replace(/^(\d)$/g, "0$1");
 		coinSlot = coinSlot.replace(/,(\d)$/g, ",0$1");
 		coinSlot = coinSlot.replace(/,(\d\d)/g, ", $$0.$1");
 		coinSlot = "CHANGE: $0." + coinSlot;
