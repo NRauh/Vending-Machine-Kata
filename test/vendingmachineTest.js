@@ -36,9 +36,9 @@ describe("addCoin", function() {
 
 	it("rejects other coins", function() {
 		var penny = vendingMachine.addCoin(19.05, 2.5);
-		expect(penny).to.equal(0);
+		expect(penny).to.equal("REJECTED COIN");
 		var weirdCoin = vendingMachine.addCoin(15.67, 4.2);
-		expect(weirdCoin).to.equal(0);
+		expect(weirdCoin).to.equal("REJECTED COIN");
 	});
 
 	it("adds the values together", function() {

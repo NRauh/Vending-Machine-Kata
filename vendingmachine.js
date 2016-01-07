@@ -39,7 +39,7 @@ module.exports = {
 			return 5;
 		} else {
 			// need to add function for coin return
-			return 0;
+			return this.coinReturn(true);;
 		}
 	},
 
