@@ -125,5 +125,29 @@ describe("makeChange", function() {
 		vendingMachine.changeDue = 25;
 		vendingMachine.makeChange();
 		expect(vendingMachine.coinsToReturn).to.deep.equal([25]);
+
+		vendingMachine.coinsToReturn = [];
+		vendingMachine.changeDue = 35;
+		vendingMachine.makeChange();
+		expect(vendingMachine.coinsToReturn).to.deep.equal([25, 10]);
+
+		vendingMachine.coinsToReturn = [];
+		vendingMachine.changeDue = 40;
+		vendingMachine.makeChange();
+		expect(vendingMachine.coinsToReturn).to.deep.equal([25, 10, 5]);
+	});
+
+	it("subtracts the added coin to return from change due", function() {
+		vendingMachine.changeDue = 25;
+		vendingMachine.makeChange();
+		expect(vendingMachine.changeDue).to.equal(0);
+
+		vendingMachine.changeDue = 10;
+		vendingMachine.makeChange();
+		expect(vendingMachine.changeDue).to.equal(0);
+
+		vendingMachine.changeDue = 5;
+		vendingMachine.makeChange();
+		expect(vendingMachine.changeDue).to.equal(0);
 	});
 });

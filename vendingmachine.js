@@ -71,7 +71,25 @@ module.exports = {
 	},
 
 	makeChange: function() {
-		this.coinsToReturn.push(25);
+		if (this.changeDue > 0) {
+			if (this.changeDue - 25 >= 0) {
+				this.coinsToReturn.push(25);
+				this.changeDue -= 25;
+				return this.makeChange();
+			}
+
+			if (this.changeDue - 10 >= 0) {
+				this.coinsToReturn.push(10);
+				this.changeDue -= 10;
+				return this.makeChange();
+			}
+
+			if (this.changeDue - 5 >= 0) {
+				this.coinsToReturn.push(5);
+				this.changeDue -= 5;
+				return this.makeChange();
+			}
+		}
 		return true;
 	}
 }
