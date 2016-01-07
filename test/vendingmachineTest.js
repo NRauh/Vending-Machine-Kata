@@ -151,3 +151,22 @@ describe("makeChange", function() {
 		expect(vendingMachine.changeDue).to.equal(0);
 	});
 });
+
+describe("coinReturn", function() {
+	beforeEach(function() {
+		vendingMachine.coinsToReturn = [];
+	});
+
+	it("returns the dollar format of individual coinsToReturn", function() {
+		vendingMachine.changeDue = 35;
+		vendingMachine.makeChange();
+		var coins = vendingMachine.coinReturn();
+		expect(coins).to.equal("CHANGE: $0.25, $0.10");
+
+		vendingMachine.coinsToReturn = [];
+		vendingMachine.changeDue = 65;
+		vendingMachine.makeChange();
+		coins = vendingMachine.coinReturn();
+		expect(coins).to.equal("CHANGE: $0.25, $0.25, $0.10, $0.05");
+	});
+});
