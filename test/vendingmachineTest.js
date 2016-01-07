@@ -163,11 +163,15 @@ describe("coinReturn", function() {
 		var coins = vendingMachine.coinReturn();
 		expect(coins).to.equal("CHANGE: $0.25, $0.10");
 
-		vendingMachine.coinsToReturn = [];
 		vendingMachine.changeDue = 65;
 		vendingMachine.makeChange();
 		coins = vendingMachine.coinReturn();
 		expect(coins).to.equal("CHANGE: $0.25, $0.25, $0.10, $0.05");
+
+		vendingMachine.changeDue = 0;
+		vendingMachine.makeChange();
+		coins = vendingMachine.coinReturn();
+		expect(coins).to.equal("NO CHANGE");
 	});
 
 	it("returns rejected coins", function() {

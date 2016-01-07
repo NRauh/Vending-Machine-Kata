@@ -98,6 +98,10 @@ module.exports = {
 			return "REJECTED COIN";
 		}
 
+		if (this.coinsToReturn.length === 0) {
+			return "NO CHANGE";
+		}
+
 		var coinSlot = this.coinsToReturn.toString();
 		coinSlot = coinSlot.replace(/,(\d)$/g, ",0$1");
 		coinSlot = coinSlot.replace(/,(\d\d)/g, ", $$0.$1");
