@@ -98,6 +98,16 @@ describe("selectProduct", function() {
 		vendingMachine.products[0].quantity = 0;
 		var product = vendingMachine.selectProduct(0);
 		expect(product).to.equal("SOLD OUT");
+		vendingMachine.products[0].quantity = 10;
+	});
+
+	it("subtracts from the quantity", function() {
+		vendingMachine.addCoin(24.26, 5.67);
+		vendingMachine.addCoin(24.26, 5.67);
+		vendingMachine.addCoin(24.26, 5.67);
+		vendingMachine.addCoin(24.26, 5.67);
+		vendingMachine.selectProduct(0);
+		expect(vendingMachine.products[0].quantity).to.equal(9);
 	});
 });
 

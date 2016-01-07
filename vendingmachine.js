@@ -61,6 +61,7 @@ module.exports = {
 			return "SOLD OUT";
 		}
 
+		this.products[productNum].quantity -= 1;
 		this.changeDue = this.insertedCoinAmount - product.price;
 		this.insertedCoinAmount = 0;
 
