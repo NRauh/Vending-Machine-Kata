@@ -169,4 +169,9 @@ describe("coinReturn", function() {
 		coins = vendingMachine.coinReturn();
 		expect(coins).to.equal("CHANGE: $0.25, $0.25, $0.10, $0.05");
 	});
+
+	it("returns rejected coins", function() {
+		var coin = vendingMachine.coinReturn(true);
+		expect(coin).to.equal("REJECTED COIN");
+	});
 });
