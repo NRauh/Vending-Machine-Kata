@@ -12,13 +12,13 @@ Run tests with `npm test`
 Run simulation with `npm start`
 
 Coins:
-j = Quarter
-k = Dime
-l = Nickel
-; = Penny (rejected)
-h = Bus token (rejected)
+* j = Quarter
+* k = Dime
+* l = Nickel
+* ; = Penny (rejected)
+* h = Bus token (rejected)
 
 Products:
-f = Soda $1.00
-d = Chips $0.50
-s = Candy $0.65
+* f = Soda $1.00
+* d = Chips $0.50
+* s = Candy $0.65
