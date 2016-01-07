@@ -111,3 +111,9 @@ describe("selectProduct", function() {
 	});
 });
 
+describe("makeChange", function() {
+	it("returns true when there's not change left to be made", function() {
+		var change = vendingMachine.makeChange();
+		expect(change).to.equal(true);
+	});
+});

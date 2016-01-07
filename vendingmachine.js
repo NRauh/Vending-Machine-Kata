@@ -66,5 +66,9 @@ module.exports = {
 		this.insertedCoinAmount = 0;
 
 		return this.products[productNum].product;
+	},
+
+	makeChange: function() {
+		return true;
 	}
 }
