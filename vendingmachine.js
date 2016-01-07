@@ -1,13 +1,16 @@
 module.exports = {
 	products: [{
 		product: "cola",
-		price: 100
+		price: 100,
+		quantity: 10
 	}, {
 		product: "chips",
-		price: 50
+		price: 50,
+		quantity: 10
 	}, {
 		product: "candy",
-		price: 65
+		price: 65,
+		quantity: 10
 	}],
 
 	insertedCoinAmount: 0,
@@ -52,6 +55,10 @@ module.exports = {
 
 			stringPrice = "$" + stringPrice.substr(0, stringPrice.length - 2) + "." + stringPrice.slice(stringPrice.length - 2, stringPrice.length);
 			return "PRICE " + stringPrice;
+		}
+
+		if (product.quantity === 0) {
+			return "SOLD OUT";
 		}
 
 		this.changeDue = this.insertedCoinAmount - product.price;

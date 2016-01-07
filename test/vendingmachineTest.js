@@ -92,5 +92,12 @@ describe("selectProduct", function() {
 		expect(vendingMachine.insertedCoinAmount).to.equal(0);
 		expect(vendingMachine.changeDue).to.equal(50);
 	});
+
+	it("says if the product is sold out", function() {
+		vendingMachine.insertedCoinAmount = 100;
+		vendingMachine.products[0].quantity = 0;
+		var product = vendingMachine.selectProduct(0);
+		expect(product).to.equal("SOLD OUT");
+	});
 });
 
