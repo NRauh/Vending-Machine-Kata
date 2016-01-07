@@ -1,0 +1,15 @@
+{
+  "name": "vending-machine-kata",
+  "version": "1.0.0",
+  "description": "My vending machine kata for Pillar.",
+  "main": "main.js",
+  "dependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "author": "Nate Rauh"
+}

@@ -6,6 +6,11 @@ My vending machine kata for Pillar.
 I tried to make the vending machine's functionality like a library which could be applied with different hardware.
 `main.js` is just something I threw together to somewhat simulate a vending machine as best as I could with only a terminal.
 
+To use requires NodeJS (and NPM), and running `npm install`
+
+Run tests with `npm test`
+Run simulation with `npm start`
+
 Coins:
 j = Quarter
 k = Dime
